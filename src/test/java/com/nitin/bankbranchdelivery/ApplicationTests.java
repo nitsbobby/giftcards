@@ -1,4 +1,4 @@
-package com.nitin.deliveryoptions;
+package com.nitin.bankbranchdelivery;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

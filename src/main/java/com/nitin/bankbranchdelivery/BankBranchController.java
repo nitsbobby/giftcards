@@ -1,11 +1,11 @@
-package com.nitin.deliveryoptions;
+package com.nitin.bankbranchdelivery;
 
-import com.nitin.exception.DeliveryOptionsException;
+import com.nitin.exception.BankBranchException;
 import com.nitin.exception.GreetingNotFoundException;
-import com.nitin.deliveryoptions.service.DeliveryOptionsService;
-import com.nitin.deliveryoptions.service.v1.DeliveryOptionsServiceImpl;
-import com.nitin.giftcard.service.GiftCardService;
-import com.nitin.giftcard.service.GiftCardServiceImpl;
+import com.nitin.bankbranch.service.DeliveryOptionsService;
+import com.nitin.bankbranch.service.v1.DeliveryOptionsServiceImpl;
+import com.nitin.bankaccount.service.BankAccountService;
+import com.nitin.bankaccount.service.BankAccountServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -18,11 +18,11 @@ import java.util.List;
  */
 
 @RestController
-public class DeliveryOptionsController {
+public class BankBranchController {
 
-    private static Logger logger = Logger.getLogger(DeliveryOptionsController.class.getName());
+    private static Logger logger = Logger.getLogger(BankBranchController.class.getName());
     DeliveryOptionsService deliveryOptionsService = new DeliveryOptionsServiceImpl();
-    GiftCardService giftCardService = new GiftCardServiceImpl();
+    BankAccountService giftCardService = new BankAccountServiceImpl();
 
     @RequestMapping("/greetings")
     public String getGreetings() throws GreetingNotFoundException {
@@ -30,27 +30,27 @@ public class DeliveryOptionsController {
     }
 
     @RequestMapping("/deliveryOption/{id}")
-    public int getDeliveryOptionId(@PathVariable int id) throws DeliveryOptionsException {
+    public int getDeliveryOptionId(@PathVariable int id) throws BankBranchException {
         return deliveryOptionsService.getDeliveryOptionIdService(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/deliveryOptions")
-    public HttpHeaders createAndReturnHttpHeaders() throws DeliveryOptionsException {
+    public HttpHeaders createAndReturnHttpHeaders() throws BankBranchException {
         return deliveryOptionsService.createHttpHeaders();
     }
 
     @RequestMapping(method = RequestMethod.GET, value="/{deliveryOption}/{deliveryOptionId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public int getDeliveryOption(@PathVariable String deliveryOption, @PathVariable Long deliveryOptionId, @RequestParam(value = "date", required = false) String dateOrNull) throws DeliveryOptionsException {
+    public int getDeliveryOption(@PathVariable String deliveryOption, @PathVariable Long deliveryOptionId, @RequestParam(value = "date", required = false) String dateOrNull) throws BankBranchException {
         return deliveryOptionsService.getDeliveryOptionService(deliveryOption, deliveryOptionId,dateOrNull);
     }
 
     @RequestMapping(method = RequestMethod.GET, value="/getAllDeliveryOptions", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<String> getAllDeliveryOptions() throws DeliveryOptionsException {
+    public List<String> getAllDeliveryOptions() throws BankBranchException {
         return deliveryOptionsService.getAllDeliveryOptionNameService();
     }
 
     @RequestMapping(method = RequestMethod.GET, value="/getAllDeliveryOptionsByRest", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<String> getAllDeliveryOptionsByRest() throws DeliveryOptionsException {
+    public List<String> getAllDeliveryOptionsByRest() throws BankBranchException {
         return deliveryOptionsService.getAllDeliveryOptionByRestClientService();
     }
 }

@@ -1,18 +1,15 @@
 package com.nitin.dto;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by tempnisha on 2017-03-09.
  */
 @Component
-public class GiftCardDTO {
+public class BankAccountDTO {
 
     private String id;
-    private String cardNumber;
+    private String BankAccountNumber;
     private String totalBalance;
     private String remainingAfterPurchase;
 
@@ -24,12 +21,12 @@ public class GiftCardDTO {
         this.id = id;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getBankAccountNumber() {
+        return BankAccountNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setBankAccountNumber(String bankAccountNumber) {
+        this.BankAccountNumber = bankAccountNumber;
     }
 
     public String getTotalBalance() {

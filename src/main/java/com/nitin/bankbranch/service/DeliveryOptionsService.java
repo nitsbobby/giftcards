@@ -1,8 +1,8 @@
-package com.nitin.deliveryoptions.service;
-
-import org.springframework.http.HttpHeaders;
+package com.nitin.bankbranch.service;
 
 import java.util.List;
+
+import org.springframework.http.HttpHeaders;
 
 /**
  * Created by tempnisha on 2017-03-08.

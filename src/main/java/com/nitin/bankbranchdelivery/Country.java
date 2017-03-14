@@ -1,11 +1,11 @@
-package com.nitin.deliveryoptions;
+package com.nitin.bankbranchdelivery;
 
 import java.util.regex.Pattern;
 
 /**
  * Created by tempnisha on 2017-03-10.
  */
-public class Market {
+public class Country {
 
     public static final Pattern MATCH_NOTHING = Pattern.compile("$.");
     private Pattern mobileNumberPattern = MATCH_NOTHING;

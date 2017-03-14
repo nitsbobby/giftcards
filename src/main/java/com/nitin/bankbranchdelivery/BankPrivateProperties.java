@@ -1,4 +1,4 @@
-package com.nitin.deliveryoptions;
+package com.nitin.bankbranchdelivery;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Component
 @ConfigurationProperties(prefix = "oms", ignoreUnknownFields = false)
-public class OmsProperties {
+public class BankPrivateProperties {
 
     private boolean dynamicWiremockEnabled = false;
     private final Map<String, String> markets = new HashMap<>();
@@ -30,7 +30,7 @@ public class OmsProperties {
         this.dynamicWiremockEnabled = dynamicWiremockEnabled;
     }
 
-    public String getMarket(RequestContext requestContext) {
+    public String getMarket(BankRequestContext requestContext) {
         return markets.get(requestContext.getMarket().toLowerCase());
     }
 

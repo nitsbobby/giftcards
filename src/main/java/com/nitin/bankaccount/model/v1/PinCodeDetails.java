@@ -1,4 +1,4 @@
-package com.nitin.giftcard.model.v1;
+package com.nitin.bankaccount.model.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

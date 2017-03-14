@@ -1,8 +1,8 @@
 package com.nitin.utils;
 
-import com.nitin.deliveryoptions.Market;
-import com.nitin.deliveryoptions.OmsProperties;
-import com.nitin.deliveryoptions.RequestContext;
+import com.nitin.bankaccount.model.v1.PinCodeDetails;
+import com.nitin.bankbranchdelivery.BankPrivateProperties;
+import com.nitin.bankbranchdelivery.BankRequestContext;
 import com.nitin.exception.FieldValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,19 +14,20 @@ import org.springframework.stereotype.Component;
 public class FieldValidator {
 
     @Autowired
-    private OmsProperties omsProperties;
+    private BankPrivateProperties bankPrivateProperties;
     @Autowired
-    private RequestContext requestContext;
+    private BankRequestContext requestContext;
 
-    public String validatePostCode(String postCode) throws FieldValidationException {
-        if (true) {//getMarket().getSearchPostCodePattern().matcher(postCode).matches()
-            return postCode.replace(" ", "").toUpperCase();
+    public String validatePostCode(String pinCodeDetails) throws FieldValidationException {
+        if (true) {//getMarket().getSearchPostCodePattern().matcher(pinCodeDetails).matches()
+           pinCodeDetails.replace(" ", "").toUpperCase();
+           return pinCodeDetails;
         }
-        throw new FieldValidationException("postCode", postCode);
+        throw new FieldValidationException("pinCodeDetails", pinCodeDetails.toString());
     }
 
     private String getMarket() {
 
-        return omsProperties.getMarket(requestContext);
+        return bankPrivateProperties.getMarket(requestContext);
     }
 }

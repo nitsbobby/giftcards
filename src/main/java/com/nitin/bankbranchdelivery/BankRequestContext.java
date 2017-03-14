@@ -1,4 +1,4 @@
-package com.nitin.deliveryoptions;
+package com.nitin.bankbranchdelivery;
 
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -6,7 +6,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 /**
  * Created by tempnisha on 2017-03-10.
  */
-public class RequestContext {
+public class BankRequestContext {
 
     public static final String REQUEST_CUSTOMER_NUMBER = "customerNumber";
     public static final String REQUEST_MARKET = "market";

@@ -1,11 +1,9 @@
-package com.nitin.deliveryoptions.service.v1;
+package com.nitin.bankbranch.service.v1;
 
+import com.nitin.bankbranch.service.DeliveryOptionsService;
 import com.nitin.exception.GreetingNotFoundException;
-import com.nitin.deliveryoptions.service.DeliveryOptionsService;
 import com.nitin.utils.Utils;
 import org.apache.log4j.Logger;
-import org.springframework.http.HttpHeaders;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

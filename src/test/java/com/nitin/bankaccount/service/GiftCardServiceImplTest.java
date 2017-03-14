@@ -1,4 +1,4 @@
-package com.nitin.giftcard.service;
+package com.nitin.bankaccount.service;
 
 import org.junit.Test;
 
